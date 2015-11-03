@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyb-mj-o82">
+                                <rect key="frame" x="115" y="225" width="90" height="30"/>
+                                <state key="normal" title="Select Image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onclickSelectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="31L-55-70V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0G-6x-giA">
+                                <rect key="frame" x="136" y="289" width="48" height="30"/>
+                                <state key="normal" title="Gallery">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickGallery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MqG-uA-v5d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xyb-mj-o82" secondAttribute="trailing" constant="99" id="GuF-7e-VXs"/>
+                            <constraint firstItem="Xyb-mj-o82" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="99" id="Ve9-gN-ETL"/>
+                            <constraint firstItem="Q0G-6x-giA" firstAttribute="top" secondItem="Xyb-mj-o82" secondAttribute="bottom" constant="34" id="c6V-p7-8ZD"/>
+                            <constraint firstItem="Q0G-6x-giA" firstAttribute="centerX" secondItem="Xyb-mj-o82" secondAttribute="centerX" id="gnv-aQ-IZr"/>
+                            <constraint firstAttribute="centerX" secondItem="Xyb-mj-o82" secondAttribute="centerX" id="jQa-mZ-Ahu"/>
+                            <constraint firstAttribute="centerY" secondItem="Xyb-mj-o82" secondAttribute="centerY" id="vEM-IW-nXT"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="La3-aY-9F6" kind="show" identifier="segueNext" id="m3M-2h-TJM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="239" y="168"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="Jpd-fZ-ypg">
+            <objects>
+                <viewController id="La3-aY-9F6" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DoW-X1-6Pk"/>
+                        <viewControllerLayoutGuide type="bottom" id="N4v-J0-e9Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mLG-wj-BI2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rgZ-v1-SQb">
+                                <rect key="frame" x="0.0" y="80" width="320" height="352"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="La3-aY-9F6" id="T5R-8C-pm9"/>
+                                    <outlet property="delegate" destination="La3-aY-9F6" id="ngD-iB-c0A"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyl-Hg-e0J">
+                                <rect key="frame" x="133" y="39" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wc-wI-wnz">
+                                <rect key="frame" x="140" y="440" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Ssl-3c-r8i"/>
+                                    <constraint firstAttribute="height" constant="30" id="WWf-2Z-aTS"/>
+                                </constraints>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickClose:" destination="La3-aY-9F6" eventType="touchUpInside" id="Va4-2W-qAH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="rgZ-v1-SQb" secondAttribute="trailing" constant="-16" id="K3b-gd-QF1"/>
+                            <constraint firstAttribute="centerX" secondItem="wyl-Hg-e0J" secondAttribute="centerX" id="KVA-sk-US1"/>
+                            <constraint firstItem="N4v-J0-e9Q" firstAttribute="top" secondItem="rgZ-v1-SQb" secondAttribute="bottom" constant="48" id="Mkc-Q0-x4q"/>
+                            <constraint firstItem="rgZ-v1-SQb" firstAttribute="leading" secondItem="mLG-wj-BI2" secondAttribute="leadingMargin" constant="-16" id="MtQ-aZ-fBJ"/>
+                            <constraint firstItem="wyl-Hg-e0J" firstAttribute="top" secondItem="DoW-X1-6Pk" secondAttribute="bottom" constant="19" id="dnj-WH-Qnw"/>
+                            <constraint firstAttribute="centerX" secondItem="8Wc-wI-wnz" secondAttribute="centerX" id="gBV-GV-7Kp"/>
+                            <constraint firstItem="N4v-J0-e9Q" firstAttribute="top" secondItem="8Wc-wI-wnz" secondAttribute="bottom" constant="10" id="luf-JW-qrr"/>
+                            <constraint firstItem="rgZ-v1-SQb" firstAttribute="top" secondItem="wyl-Hg-e0J" secondAttribute="bottom" constant="20" id="rz9-6W-QPI"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableviewImage" destination="rgZ-v1-SQb" id="gfj-xn-YUz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zel-Yi-N0C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="691" y="165"/>
+        </scene>
+    </scenes>
+</document>
